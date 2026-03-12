@@ -29,15 +29,6 @@ class Gnutls < Formula
     end
   end
 
-  bottle do
-    sha256 arm64_tahoe:   "df6bfd97301eefdd39186a84e2089cd6b2ac62655a5bcf005e23c1b1e6631628"
-    sha256 arm64_sequoia: "2c852d43e0792be1e1091677c8bd3021c69b6d4cd237ea35918c033893f9ab1b"
-    sha256 arm64_sonoma:  "da087cf434671200e3c1b77f21341d9b5deb6e3df64b3868cc21212b965f9358"
-    sha256 sonoma:        "6dd581133c9f496152ed69d45129f53408035392101cd9c44d64649d0fba8bfb"
-    sha256 arm64_linux:   "ee21922877570b314f7457e9030fd915ca55ea6c0c343c8ccfce82b1f4914c5e"
-    sha256 x86_64_linux:  "d99e673012799fbe5648e8f511230233f9280a6aaba82bb5e3fa4b257bc4d9e0"
-  end
-
   depends_on "pkgconf" => :build
   depends_on "texinfo" => :build
   depends_on "ca-certificates"
@@ -56,6 +47,7 @@ class Gnutls < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+    depends_on "zstd"
   end
 
   fails_with :clang do
