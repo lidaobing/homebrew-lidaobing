@@ -47,6 +47,7 @@ class Gnutls < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+    depends_on "zstd"
   end
 
   fails_with :clang do
